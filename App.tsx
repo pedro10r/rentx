@@ -13,12 +13,12 @@ import {
   Archivo_600SemiBold,
 } from '@expo-google-fonts/archivo';
 
-import { Home } from '@screens/Home';
+import { Routes } from './src/routes';
 
 import { theme } from './src/styles/themes/default';
 
 export default function App() {
-  const [ fontsLoaded ] = useFonts({
+  const [fontsLoaded] = useFonts({
     Inter_400Regular,
     Inter_500Medium,
     Archivo_400Regular,
@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Routes />
     </ThemeProvider>
   );
 }
