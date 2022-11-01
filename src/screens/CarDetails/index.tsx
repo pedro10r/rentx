@@ -23,7 +23,9 @@ import {
   Price,
   About,
   Acessories,
+  Footer,
 } from './styles';
+import { Button } from '@components/Button';
 
 export function CarDetails() {
   return (
@@ -66,6 +68,10 @@ export function CarDetails() {
           É um belíssimo carro para quem gosta de acelerar.
         </About>
       </Content>
+
+      <Footer>
+        <Button title='Confirmar'/>
+      </Footer>
     </Container>
   );
 }

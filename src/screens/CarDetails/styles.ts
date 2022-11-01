@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
+import { Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 
 export const Container = styled.View`
   flex: 1;
@@ -81,4 +83,12 @@ export const Acessories = styled.View`
   align-items: center;
   justify-content: space-between;
   margin-top: 16px;
+`;
+
+export const Footer = styled.View`
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.background_secondary};
+
+  padding: 24px;
+  padding-bottom: ${Platform.OS === 'android' ? getBottomSpace() + 24 : getBottomSpace()}px;
 `;
