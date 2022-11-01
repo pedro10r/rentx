@@ -1,6 +1,7 @@
 import { useTheme } from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { useNavigation } from '@react-navigation/native';
 
 import { Accessory } from '@components/Accessory';
 import { BackButton } from '@components/BackButton';
@@ -42,6 +43,11 @@ import {
 
 export function SchedulingDetails() {
   const { colors } = useTheme();
+  const navigation = useNavigation();
+
+  function handleConfirm() {
+    navigation.navigate('scheduling_complete')
+  }
 
   return (
     <Container>
@@ -114,7 +120,11 @@ export function SchedulingDetails() {
       </Content>
 
       <Footer>
-        <Button title='Alugar agora' color={colors.success} />
+        <Button
+          title='Alugar agora'
+          color={colors.success}
+          onPress={handleConfirm}
+        />
       </Footer>
     </Container>
   );

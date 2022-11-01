@@ -1,10 +1,10 @@
 import { TouchableOpacityProps } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 import { useTheme } from 'styled-components';
 
 import { Container } from './styles';
-import { RFValue } from 'react-native-responsive-fontsize';
 
 type Props = TouchableOpacityProps & {
   color?: string;

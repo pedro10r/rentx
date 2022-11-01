@@ -3,11 +3,13 @@ import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { PropsWithChildren } from 'react';
 
-type ButtonProps = PropsWithChildren<RectButtonProps> & {
+type ButtonProps = {
   color: string;
 }
 
-export const Container = styled(RectButton)<ButtonProps>`
+export const Container = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7,
+})<ButtonProps>`
   width: 80px;
   height: 56px;
 

@@ -1,3 +1,6 @@
+import { TouchableOpacityProps } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import GasolineSvg from '@assets/gasoline.svg';
 
 import {
@@ -23,13 +26,13 @@ type CardData = {
   thumbnail: string;
 }
 
-type Props = {
+type Props = TouchableOpacityProps & {
   data: CardData;
 }
 
-export function Car({ data }: Props) {
+export function Car({ data, ...rest }: Props) {
   return (
-    <Container>
+    <Container {...rest}>
       <Details>
         <Brand>{data.name}</Brand>
         <Name>{data.name}</Name>
@@ -50,7 +53,6 @@ export function Car({ data }: Props) {
         source={{ uri: data.thumbnail }}
         resizeMode="contain"
       />
-
     </Container>
   );
 }
