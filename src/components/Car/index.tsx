@@ -1,5 +1,6 @@
 import { TouchableOpacityProps } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+
+import { CarDTO } from 'src/dtos/CarDTO';        
 
 import GasolineSvg from '@assets/gasoline.svg';
 
@@ -16,18 +17,8 @@ import {
   CarImage,
 } from './styles';
 
-type CardData = {
-  brand: string;
-  name: string;
-  rent: {
-    period: string;
-    price: number;
-  }
-  thumbnail: string;
-}
-
 type Props = TouchableOpacityProps & {
-  data: CardData;
+  data: CarDTO;
 }
 
 export function Car({ data, ...rest }: Props) {

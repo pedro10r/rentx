@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { FlatList, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RFValue } from 'react-native-responsive-fontsize';
@@ -5,9 +6,12 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import LogoSvg from '@assets/logo.svg';
 
 import { Car } from '@components/Car';
+import { Load } from '@components/Load';
+
+import { api } from '../../services/api';
+import { CarDTO } from 'src/dtos/CarDTO';
 
 import {
-  CarList,
   Container,
   Header,
   HeaderContent,
@@ -15,21 +19,29 @@ import {
 } from './styles';
 
 export function Home() {
-  const navigation = useNavigation();
+  const [cars, setCars] = useState<CarDTO[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const carData = {
-    brand: 'Audi',
-    name: 'RS 5 Coupé',
-    rent: {
-      period: 'Ao dia',
-      price: 120,
-    },
-    thumbnail: 'https://www.pngall.com/wp-content/uploads/2016/05/Audi-PNG-Picture.png'
-  }
+  const navigation = useNavigation();
 
   function handleCarDetails() {
     navigation.navigate('car_details');
   }
+
+  async function fetchCars() {
+    try {
+      const response = await api.get('/cars');
+      setCars(response.data);
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchCars();
+  }, []);
 
   return (
     <Container>
@@ -51,18 +63,20 @@ export function Home() {
         </HeaderContent>
       </Header>
       
-      <FlatList
-        data={[1,2,3,4,5,6,7]}
-        keyExtractor={item => String(item)}
-        contentContainerStyle={{ padding: 24 }}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <Car
-            data={carData}
-            onPress={handleCarDetails}
-          />
-        )}
-      />
+      {loading ? <Load /> :
+        <FlatList
+          data={cars}
+          keyExtractor={item => item.id}
+          contentContainerStyle={{ padding: 24 }}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => (
+            <Car
+              data={item}
+              onPress={handleCarDetails}
+            />
+          )}
+        />
+      }
     </Container>
   );
 }
