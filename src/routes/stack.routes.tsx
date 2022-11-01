@@ -4,6 +4,7 @@ import { Home } from '@screens/Home';
 import { CarDetails } from '@screens/CarDetails';
 import { Scheduling } from '@screens/Scheduling';
 import { SchedulingDetails } from '@screens/SchedulingDetails';
+import { SchedulingComplete } from '@screens/SchedulingComplete';
 
 
 
@@ -15,8 +16,8 @@ export function StackRoutes() {
       headerShown: false
     }}>
       <Screen
-        name='SchedulingDetails'
-        component={SchedulingDetails}
+        name='SchedulingComplete'
+        component={SchedulingComplete}
       />
     </Navigator>
   );
