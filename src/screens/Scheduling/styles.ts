@@ -1,6 +1,7 @@
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import styled, { css } from 'styled-components/native';
+import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { Platform } from 'react-native';
 
 type DateValueProps = {
   selected: boolean;
@@ -73,4 +74,5 @@ export const Content = styled.ScrollView.attrs({
 
 export const Footer = styled.View`
   padding: 24px;
+  padding-bottom: ${Platform.OS === 'android' ? getBottomSpace() + 24 : getBottomSpace()}px;
 `;
