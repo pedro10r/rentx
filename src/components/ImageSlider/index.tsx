@@ -36,21 +36,21 @@ export function ImageSlider({ imagesUrl }: Props) {
         ))}
       </ImageIndexes>
 
-        <FlatList
-          data={imagesUrl}
-          keyExtractor={item => item}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => (
-            <CarImageWrapper>
-              <CarImage
-                source={{ uri: item }}
-                resizeMode="contain"
-              />
-            </CarImageWrapper>
-          )}
-          onViewableItemsChanged={indexChanged.current}
-        />
+      <FlatList
+        data={imagesUrl}
+        keyExtractor={item => item}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <CarImageWrapper>
+            <CarImage
+              source={{ uri: item }}
+              resizeMode="contain"
+            />
+          </CarImageWrapper>
+        )}
+        onViewableItemsChanged={indexChanged.current}
+      />
     </Container>
   );
 }
