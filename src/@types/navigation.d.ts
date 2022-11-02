@@ -15,6 +15,7 @@ export declare global {
         dates: Object,
       };
       scheduling_complete: undefined;
+      my_cars: undefined;
     }
   }
 }
