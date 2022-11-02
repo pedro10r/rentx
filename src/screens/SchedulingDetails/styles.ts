@@ -1,25 +1,25 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { getBottomSpace } from 'react-native-iphone-x-helper';
+import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background_secondary};
 `;
 
-export const Header = styled(SafeAreaView)`
+export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
   position: absolute;
+  margin-top: ${getStatusBarHeight() + 18}px;
   margin-left: 24px;
 `;
 
- export const CarImages = styled(SafeAreaView)`
-  margin-top: 10px;
+ export const CarImages = styled.View`
+  margin-top: ${getStatusBarHeight() + 32}px;
 `;
 
 export const Content = styled.ScrollView.attrs({
@@ -66,7 +66,7 @@ export const Price = styled.Text`
   font-size: ${RFValue(25)}px;
 `;
 
-export const Acessories = styled.View`
+export const Accessories = styled.View`
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;

@@ -34,10 +34,9 @@ export function CarDetails() {
   const navigation = useNavigation();
   const route = useRoute();
   const { car } = route.params as RouteParams;
-  console.log(car);
 
   function handleConfirmRental() {
-    navigation.navigate('scheduling')
+    navigation.navigate('scheduling', { car });
   }
 
   function handleGoBack() {
