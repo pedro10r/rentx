@@ -9,7 +9,7 @@ import { Car } from '@components/Car';
 import { Load } from '@components/Load';
 
 import { api } from '../../services/api';
-import { CarDTO } from 'src/dtos/CarDTO';
+import { CarDTO } from '@dtos/CarDTO';
 
 import {
   Container,
@@ -24,8 +24,8 @@ export function Home() {
 
   const navigation = useNavigation();
 
-  function handleCarDetails() {
-    navigation.navigate('car_details');
+  function handleCarDetails(car: CarDTO) {
+    navigation.navigate('car_details', { car });
   }
 
   async function fetchCars() {
@@ -72,7 +72,7 @@ export function Home() {
           renderItem={({ item }) => (
             <Car
               data={item}
-              onPress={handleCarDetails}
+              onPress={() => handleCarDetails(item)}
             />
           )}
         />

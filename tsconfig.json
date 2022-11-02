@@ -13,6 +13,9 @@
       "@screens/*": [
         "./src/screens/*"
       ],
+      "@dtos/*": [
+        "./src/dtos/*"
+      ],
     }
   },
 }
