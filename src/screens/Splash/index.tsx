@@ -10,7 +10,6 @@ import Animated, {
   withTiming
 } from 'react-native-reanimated';
 
-
 import BrandSvg from '@assets/brand.svg';
 import LogoSvg from '@assets/logo.svg';
 
