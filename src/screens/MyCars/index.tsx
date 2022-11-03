@@ -40,7 +40,6 @@ export function MyCars() {
   const [loading, setLoading] = useState(true);
 
   const { colors } = useTheme();
-
   const navigation = useNavigation();
 
   async function fetchCars() {
