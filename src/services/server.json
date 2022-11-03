@@ -277,7 +277,17 @@
     },
     {
       "id": "ffb71f55-818a-48b1-b7d2-2efc406ede25",
-      "unavailable_dates": []
+      "unavailable_dates": [
+        "2022-11-10",
+        "2022-11-11",
+        "2022-11-12",
+        "2022-11-13",
+        "2022-11-14",
+        "2022-11-15",
+        "2022-11-16",
+        "2022-11-17",
+        "2022-11-18"
+      ]
     },
     {
       "id": "52930821-cbea-4b05-9f45-7c02b1bb0d8c",
@@ -559,6 +569,54 @@
       "startDate": "22/11/2022",
       "endDate": "24/11/2022",
       "id": 5
+    },
+    {
+      "user_id": 1,
+      "car": {
+        "id": "ffb71f55-818a-48b1-b7d2-2efc406ede25",
+        "brand": "Porsche",
+        "name": "Panamera",
+        "about": "O Panamera é um automóvel de luxo coupé com porte grande. Tem motorização dianteira V6 e V8. A tração é integral com uma caixa PDK de sete mudanças e dupla embreagem.",
+        "rent": {
+          "period": "Ao dia",
+          "price": 340
+        },
+        "fuel_type": "gasoline_motor",
+        "thumbnail": "https://storage.googleapis.com/golden-wind/ignite/react-native/thumbnails/2.png",
+        "accessories": [
+          {
+            "type": "speed",
+            "name": "315km/h"
+          },
+          {
+            "type": "acceleration",
+            "name": "2.9s"
+          },
+          {
+            "type": "turning_diameter",
+            "name": "700 HP"
+          },
+          {
+            "type": "gasoline_motor",
+            "name": "Gasoline"
+          },
+          {
+            "type": "exchange",
+            "name": "Auto"
+          },
+          {
+            "type": "seats",
+            "name": "4 pessoas"
+          }
+        ],
+        "photos": [
+          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/4.png",
+          "https://storage.googleapis.com/golden-wind/ignite/react-native/images/5.png"
+        ]
+      },
+      "startDate": "10/11/2022",
+      "endDate": "18/11/2022",
+      "id": 6
     }
   ]
 }
