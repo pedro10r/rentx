@@ -39,6 +39,7 @@ export const Content = styled.View`
   flex: 1;
   width: 100%;
   padding: 0 16px;
+  margin-bottom: 24px;
 `;
 
 export const Appointments = styled.View`
@@ -70,6 +71,7 @@ export const CarWrapper = styled.View`
 export const CarFooter = styled.View`
   width: 100%;
   padding: 12px;
+  border-radius: 6px;
 
   margin-top: -10px;
 
