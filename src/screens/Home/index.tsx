@@ -19,7 +19,7 @@ const ButtonAnimated = Animated.createAnimatedComponent(RectButton);
 import LogoSvg from '@assets/logo.svg';
 
 import { Car } from '@components/Car';
-import { Load } from '@components/Load';
+import { LoadAnimation } from '@components/LoadAnimation';
 
 import { api } from '../../services/api';
 import { CarDTO } from '@dtos/CarDTO';
@@ -116,7 +116,7 @@ export function Home() {
         </HeaderContent>
       </Header>
       
-      {loading ? <Load /> :
+      {loading ? <LoadAnimation /> :
         <FlatList
           data={cars}
           keyExtractor={item => item.id}
